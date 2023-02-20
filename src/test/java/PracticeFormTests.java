@@ -29,6 +29,8 @@ public class PracticeFormTests {
         $("#react-select-4-input").setValue("Delhi").pressEnter();
         executeJavaScript("$('[id = dateOfBirthInput]').val('11 Jan 2000')");
         $("#submit").click();
+        
+        
         $(".table-responsive").shouldHave(text("Ivan Ivanov"));
         $(".table-responsive").shouldHave(text("Male"));
         $(".table-responsive").shouldHave(text("English"));
