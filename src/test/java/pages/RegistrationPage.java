@@ -5,12 +5,25 @@ import pages.components.CalendarComponent;
 import pages.components.RegistrationResultsModal;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
     private final CalendarComponent calendarComponent = new CalendarComponent();
     private final RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
-    private final SelenideElement FIRST_NAME_INPUT = $("#firstName"), LAST_NAME_INPUT = $("#lastName"), EMAIL_INPUT = $("#userEmail"), GENDER_INPUT = $("label[for='gender-radio-1']"), PHONE_NUMBER_INPUT = $("#userNumber"), DATE_OF_BIRTH_INPUT = $("#dateOfBirthInput"), SUBJECT_INPUT = $("#subjectsInput"), HOBBIES_INPUT = $("label[for='hobbies-checkbox-1']"), UPLOAD_PICTURE_INPUT = $("#uploadPicture"), CURRENT_ADDRESS_INPUT = $("#currentAddress"), STATE_INPUT = $("#react-select-3-input"), CITY_INPUT = $("#react-select-4-input"), SUBMIT_BUTTON = $("#submit");
+    private final SelenideElement FIRST_NAME_INPUT = $("#firstName"),
+            LAST_NAME_INPUT = $("#lastName"),
+            EMAIL_INPUT = $("#userEmail"),
+            GENDER_INPUT = $("#genterWrapper"),
+            PHONE_NUMBER_INPUT = $("#userNumber"),
+            DATE_OF_BIRTH_INPUT = $("#dateOfBirthInput"),
+            SUBJECT_INPUT = $("#subjectsInput"),
+            HOBBIES_INPUT = $("#hobbiesWrapper"),
+            UPLOAD_PICTURE_INPUT = $("#uploadPicture"),
+            CURRENT_ADDRESS_INPUT = $("#currentAddress"),
+            STATE_INPUT = $("#react-select-3-input"),
+            CITY_INPUT = $("#react-select-4-input"),
+            SUBMIT_BUTTON = $("#submit");
 
     public RegistrationPage openPage() {
         open("https://demoqa.com/automation-practice-form");
@@ -44,8 +57,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setGender() {
-        GENDER_INPUT.click();
+    public RegistrationPage setGender(String value) {
+        GENDER_INPUT.$(byText(value)).click();
         return this;
     }
 
@@ -54,8 +67,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setHobbies() {
-        HOBBIES_INPUT.click();
+    public RegistrationPage setHobbies(String value) {
+        HOBBIES_INPUT.$(byText(value)).click();
         return this;
     }
 
