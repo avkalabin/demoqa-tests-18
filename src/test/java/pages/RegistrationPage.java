@@ -1,7 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.github.javafaker.Faker;
 import pages.components.CalendarComponent;
 import pages.components.RegistrationResultsModal;
 
@@ -12,7 +11,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class RegistrationPage {
     private final CalendarComponent calendarComponent = new CalendarComponent();
     private final RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
-    public static Faker faker = new Faker();
     private final SelenideElement FIRST_NAME_INPUT = $("#firstName"),
             LAST_NAME_INPUT = $("#lastName"),
             EMAIL_INPUT = $("#userEmail"),
@@ -26,15 +24,6 @@ public class RegistrationPage {
             STATE_INPUT = $("#react-select-3-input"),
             CITY_INPUT = $("#react-select-4-input"),
             SUBMIT_BUTTON = $("#submit");
-
-    public static String[] months = {"January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"};
-
-    public static String[] subjects = {"Accounting", "Maths", "Arts", "English", "Physics", "Chemistry",
-            "Computer Science", "Economics", "Social Studies", "History", "Civics", "Commerce", "Hindi", "Biology"};
-    public static String[] hobbiess = {"Reading", "Sports", "Music"};
-
-    public static String[] cities = {"Delhi", "Gurgaon", "Noida"};
 
 
     public RegistrationPage openPage() {

@@ -3,7 +3,7 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static pages.RegistrationPage.*;
+import static tests.TestData.*;
 import static utils.RandomUtils.getRandomItemFromArray;
 
 
@@ -18,7 +18,7 @@ public class RegistrationWithFakerTests extends TestBase {
         String gender = faker.demographic().sex();
         String email = faker.internet().emailAddress();
         String phoneNumber = 8 + faker.phoneNumber().subscriberNumber(9);
-        String dayOfBirth = String.format("%02d", faker.number().numberBetween(1,28));
+        String dayOfBirth = String.format("%02d", faker.number().numberBetween(1, 28));
         String monthOfBirth = getRandomItemFromArray(months);
         String yearOfBirth = String.valueOf(faker.number().numberBetween(1950, 2005));
         String subject = getRandomItemFromArray(subjects);
