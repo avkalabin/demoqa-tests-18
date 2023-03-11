@@ -7,7 +7,7 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browser = "edge";
+
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = true;
     }
