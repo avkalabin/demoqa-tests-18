@@ -2,7 +2,6 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
-import pages.components.RegistrationResultsModal;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -10,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
     private final CalendarComponent calendarComponent = new CalendarComponent();
-    private final RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
+
     private final SelenideElement FIRST_NAME_INPUT = $("#firstName"),
             LAST_NAME_INPUT = $("#lastName"),
             EMAIL_INPUT = $("#userEmail"),
@@ -101,16 +100,6 @@ public class RegistrationPage {
     public RegistrationPage setBirthDate(String dayOfBirth, String monthOfBirth, String yearOfBirth) {
         DATE_OF_BIRTH_INPUT.click();
         calendarComponent.setDate(dayOfBirth, monthOfBirth, yearOfBirth);
-        return this;
-    }
-
-    public RegistrationPage verifyResultsModalAppears() {
-        registrationResultsModal.verifyModalAppears();
-        return this;
-    }
-
-    public RegistrationPage verifyResultsModalData(String labelText, String valuesText) {
-        registrationResultsModal.isResultFormElementPresent(labelText, valuesText);
         return this;
     }
 
