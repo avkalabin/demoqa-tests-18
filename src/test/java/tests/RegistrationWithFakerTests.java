@@ -1,16 +1,26 @@
 package tests;
 
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import pages.components.RegistrationResultsModal;
 
 import static tests.FakerTestData.*;
 
-
+@DisplayName("DemoQA")
 public class RegistrationWithFakerTests extends TestBase {
     private final RegistrationPage registrationPage = new RegistrationPage();
     private final RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
 
+
+    @Feature("DemoQA Practice Form")
+    @Story("Student Registration Form")
+    @Owner("avkalabin")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Проверка заполнения Student Registration Form")
+    @Tag("remote")
     @Test
     void successfulRegistrationTest() {
 
