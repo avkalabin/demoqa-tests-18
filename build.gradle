@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation (
+    testImplementation(
             "com.codeborne:selenide:6.12.2",
             "org.junit.jupiter:junit-jupiter:5.9.2",
             "com.github.javafaker:javafaker:1.0.2",
@@ -32,12 +32,47 @@ dependencies {
     )
 }
 
-test {
+
+tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
 
-task remote_test(type:Test) {
+
+task remote_test(type: Test) {
     useJUnitPlatform {
         includeTags("remote")
+    }
+}
+
+task simple_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("simple")
+    }
+}
+
+
+task one_property_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("one_property")
+    }
+}
+
+task many_properties_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("many_properties")
+    }
+}
+
+task hello_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("hello")
     }
 }

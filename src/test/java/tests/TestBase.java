@@ -14,14 +14,14 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
 
-        String selenoidURL = System.getProperty("SELENOID_URL");
-//selenoid.autotests.cloud
+        String selenoidURL = System.getProperty("selenoid_url");
+//selenoid.autotests.cloud/wd/hub -Dselenoid_url="selenoid.autotests.cloud/wd/hub"
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.remote = "https://user1:1234@" + selenoidURL + "/wd/hub";
+        Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url");
         Configuration.browserSize = "1920x1080";
         Configuration.browser = "chrome";
         Configuration.browserVersion = "100.0";
-
+        System.out.println(selenoidURL);///////////////////////////
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
