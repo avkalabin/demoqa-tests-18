@@ -18,11 +18,12 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
 
-        Configuration.baseUrl = webDriverConfig.getBaseUrl();
-        Configuration.remote = webDriverConfig.getRemoteUrl();
-        Configuration.browserSize = webDriverConfig.getBrowserSize();
-        Configuration.browser = webDriverConfig.getBrowser();
-        Configuration.browserVersion = webDriverConfig.getBrowserVersion();
+      //  Configuration.baseUrl = webDriverConfig.getBaseUrl();
+        Configuration.baseUrl = "https://demoqa.com";
+       // Configuration.remote = webDriverConfig.getRemoteUrl();
+      //  Configuration.browserSize = webDriverConfig.getBrowserSize();
+      //  Configuration.browser = webDriverConfig.getBrowser();
+      //  Configuration.browserVersion = webDriverConfig.getBrowserVersion();
 
         Configuration.pageLoadStrategy = "eager";
 
