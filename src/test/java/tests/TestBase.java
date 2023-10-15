@@ -20,6 +20,7 @@ public class TestBase {
 
       //  Configuration.baseUrl = webDriverConfig.getBaseUrl();
         Configuration.baseUrl = "https://demoqa.com";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
        // Configuration.remote = webDriverConfig.getRemoteUrl();
       //  Configuration.browserSize = webDriverConfig.getBrowserSize();
       //  Configuration.browser = webDriverConfig.getBrowser();
