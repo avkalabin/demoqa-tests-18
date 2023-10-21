@@ -27,8 +27,8 @@ public class TestBase {
         // Configuration.remote = webDriverConfig.getRemoteUrl();
         //  Configuration.browserSize = webDriverConfig.getBrowserSize();
         Configuration.browserSize = System.getProperty("browserSize", "800x600");
-        //  Configuration.browser = webDriverConfig.getBrowser();
-        //  Configuration.browserVersion = webDriverConfig.getBrowserVersion();
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion =System.getProperty("browserVersion", "100");
 
         Configuration.pageLoadStrategy = "eager";
 
