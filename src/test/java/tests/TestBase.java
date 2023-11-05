@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class TestBase {
 
-    static WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+    static WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties(), System.getenv());
 
     @BeforeAll
     static void beforeAll() {
