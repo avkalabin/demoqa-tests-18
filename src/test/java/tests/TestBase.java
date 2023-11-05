@@ -16,13 +16,14 @@ import java.util.Map;
 
 public class TestBase {
 
-    static WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties(), System.getenv());
+  static WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+
 
     @BeforeAll
     static void beforeAll() {
 
-        Configuration.baseUrl = webDriverConfig.getBaseUrl();
-        //Configuration.baseUrl = "https://demoqa.com";
+       // Configuration.baseUrl = webDriverConfig.getBaseUrl();
+        Configuration.baseUrl = "https://demoqa.com";
         //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         Configuration.remote = webDriverConfig.getRemoteUrl();
         Configuration.browserSize = webDriverConfig.getBrowserSize();
