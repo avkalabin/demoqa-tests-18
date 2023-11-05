@@ -22,16 +22,11 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
 
-       // Configuration.baseUrl = webDriverConfig.getBaseUrl();
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-       // Configuration.remote = webDriverConfig.getRemoteUrl();
-        Configuration.browserSize = webDriverConfig.getBrowserSize();
-        //Configuration.browserSize = System.getProperty("browserSize", "800x600");
-        //Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browser = webDriverConfig.getBrowser();
-       //Configuration.browserVersion =System.getProperty("browserVersion", "100");
-        Configuration.browserVersion = webDriverConfig.getBrowserVersion();
+       Configuration.baseUrl = webDriverConfig.getBaseUrl();
+       Configuration.remote = webDriverConfig.getRemoteUrl();
+       Configuration.browserSize = webDriverConfig.getBrowserSize();
+       Configuration.browser = webDriverConfig.getBrowser();
+       Configuration.browserVersion = webDriverConfig.getBrowserVersion();
 
         Configuration.pageLoadStrategy = "eager";
 
