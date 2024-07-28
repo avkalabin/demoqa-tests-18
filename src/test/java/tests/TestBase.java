@@ -20,7 +20,7 @@ public class TestBase {
 
         Configuration.baseUrl = webDriverConfig.getBaseUrl();
         //Configuration.remote = webDriverConfig.getRemoteUrl();
-        Configuration.remote = http://192.168.0.53:4444/wd/hub
+        Configuration.remote = http://192.168.0.53:4444/wd/hub;
         Configuration.browserSize = webDriverConfig.getBrowserSize();
         Configuration.browser = webDriverConfig.getBrowser();
         Configuration.browserVersion = webDriverConfig.getBrowserVersion();
